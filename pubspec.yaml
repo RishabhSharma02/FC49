@@ -41,9 +41,12 @@ dependencies:
   phosphor_flutter: ^2.0.0
   pin_code_text_field: ^1.8.0
   flutter_svg: ^2.0.5
+  firebase_auth: ^4.6.1
   api_cache_manager: ^1.0.2
   camera: ^0.10.5
   number_selector: ^1.0.7
+  
+  firebase_core: ^2.13.0
 
 
 dev_dependencies:
