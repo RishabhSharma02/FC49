@@ -1,9 +1,6 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2709
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 Description:-\
-}
+# Fantomcode-MedMitra
+
+Medication non-adherence affects up to 50% of patients with chronic diseases globally, causing poor health outcomes and increased healthcare costs. Stated by World Health Organisation in the US, it results in 125,000 deaths and costs $100-$300 billion annually.In India its even more worse.
+In India its even more worse. Access to timely medical care is also challenging in rural areas and tier 2 tier 3 cities.
+An app that not only manages medication schedules & reminds patients but also connects them with healthcare providers, Delivers medicine, AI powered symptom checker & storing and digitizing health records with just a scan securely is urgently needed and hence to take care of your all medical needs.
