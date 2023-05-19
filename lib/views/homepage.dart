@@ -1,5 +1,6 @@
 import 'package:api_cache_manager/utils/cache_manager.dart';
 import 'package:camera/camera.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 // //import 'package:app/views/scanner/Calender_desc.dart';
 // import 'package:app/views/scanner/scanner.dart';
 // import 'package:camera/camera.dart';
@@ -9,6 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:medmitra/views/doctor_search.dart';
+import 'package:medmitra/views/marketplace.dart';
 import 'package:medmitra/views/scanner.dart';
 //import 'package:kommunicate_flutter/kommunicate_flutter.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -104,7 +106,9 @@ class DoctorSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+    
       children: [
+      
         Padding(
           padding: EdgeInsets.only(left: 10.w, top: 5.h, right: 10.w),
           child: Row(
@@ -159,6 +163,7 @@ class DoctorSection extends StatelessWidget {
             ),
           ),
         ),
+       
         SizedBox(
             height: 130.h,
             child: ListView(
@@ -188,8 +193,18 @@ class DoctorSection extends StatelessWidget {
                   path: 'assets/images/doctor6.png',
                   title: 'Dr. Rajashree',
                 ),
+                
               ],
             )),
+              Padding(
+                padding:  EdgeInsets.only(top:18.0),
+                child: SvgPicture.asset("assets/icons/blog.svg"),
+              ),
+               Padding(
+                padding:  EdgeInsets.only(top:18.0),
+                child: SvgPicture.asset("assets/icons/eos.svg"),
+              ),
+
       ],
     );
   }
@@ -605,7 +620,7 @@ class Header extends StatelessWidget {
               ),
               onTap: () {
                 Future<void> _signOut() async {
-                  // await FirebaseAuth.instance.signOut();
+                  await FirebaseAuth.instance.signOut();
                 }
 
                 _signOut();
@@ -627,18 +642,17 @@ class Header extends StatelessWidget {
                     color: primaryColor,
                   ),
                   onTap: () async {
-                    // dynamic conversationObject = {
-                    //   'appId':
-                    //       '156ceee463c1537558704536f179c15e', // The APP_ID obtained from kommunicate dashboard.
-                    // };
-                    // KommunicateFlutterPlugin.buildConversation(
-                    //         conversationObject)
-                    //     .then((clientConversationId) {
-                    //   print("Conversation builder success : " +
-                    //       clientConversationId.toString());
-                    // }).catchError((error) {
-                    //   print("Conversation builder error : " + error.toString());
-                    // });
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Marketplace()));
+    //                     dynamic conversationObject = {
+    //  'appId': '202b74c336609d5b8dd585671755e231e',// The [APP_ID](https://dashboard.kommunicate.io/settings/install) obtained from kommunicate dashboard.
+    //  };
+
+    // KommunicateFlutterPlugin.buildConversation(conversationObject)
+    //     .then((clientConversationId) {
+    //   print("Conversation builder success : " + clientConversationId.toString());
+    // }).catchError((error) {
+    //   print("Conversation builder error : " + error.toString());
+    // });
                   },
                 ),
               ),

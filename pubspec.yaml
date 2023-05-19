@@ -45,8 +45,8 @@ dependencies:
   api_cache_manager: ^1.0.2
   camera: ^0.10.5
   number_selector: ^1.0.7
-  
   firebase_core: ^2.13.0
+  circular_countdown_timer: ^0.2.3
 
 
 dev_dependencies:

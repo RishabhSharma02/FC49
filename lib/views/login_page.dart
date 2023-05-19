@@ -1,5 +1,6 @@
 //import 'package:app/views/authentications/otp_screen.dart';
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController _controller = new TextEditingController();
   bool isLoading = false;
   final phoneNumberController = TextEditingController();
-  //final auth = FirebaseAuth.instance;
+  final auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -153,32 +154,33 @@ class _LoginPageState extends State<LoginPage> {
                       color: Color(0xff3B63DA),
                       borderRadius: BorderRadius.circular(11)),
                   child: TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => OtpScreen()));
-                      },
                       // onPressed: () {
-                      //   auth.verifyPhoneNumber(
-                      //       phoneNumber: "+91${_controller.text.toString()}",
-                      //       verificationCompleted: (_) {},
-                      //       verificationFailed: (e) {
-                      //         print(e);
-                      //       },
-                      //       codeSent: (String verification, int? token) {
-                      //         // Navigator.push(
-                      //         //     context,
-                      //         //     MaterialPageRoute(
-                      //         //         builder: (context) => OtpScreen(
-                      //         //               VerificationId: verification,
-                      //         //               phoneno: verification,
-                      //         //             )));
-                      //       },
-                      //       codeAutoRetrievalTimeout: (e) {
-                      //         print(e);
-                      //       });
+                      //   Navigator.push(
+                      //       context,
+                      //       MaterialPageRoute(
+                      //           builder: (context) => OtpScreen()));
                       // },
+                      onPressed: () {
+                        //auth.setSettings(appVerificationDisabledForTesting: true);
+                        auth.verifyPhoneNumber(
+                            phoneNumber: "+91${_controller.text.toString()}",
+                            verificationCompleted: (_) {},
+                            verificationFailed: (e) {
+                              print(e);
+                            },
+                            codeSent: (String verification, int? token) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => OtpScreen(
+                                            VerificationId: verification,
+                                            phoneno: verification,
+                                          )));
+                            },
+                            codeAutoRetrievalTimeout: (e) {
+                              print(e);
+                            });
+                      },
                       child: Text("Continue",
                           style: GoogleFonts.poppins(
                               fontSize: 16.sp, color: Colors.white)))),

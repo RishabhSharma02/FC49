@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:medmitra/views/marketplace.dart';
 
 import 'constants.dart';
 import 'doctor_search.dart';
@@ -83,11 +84,16 @@ class _MainMenuState extends State<MainMenu>
                 ),
                 label: 'Person'),
             BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  'assets/icons/medicine_blue.svg',
-                  colorFilter: const ColorFilter.mode(
-                    Colors.black,
-                    BlendMode.srcIn,
+                icon: GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Marketplace()));
+                  },
+                  child: SvgPicture.asset(
+                    'assets/icons/medicine_blue.svg',
+                    colorFilter: const ColorFilter.mode(
+                      Colors.black,
+                      BlendMode.srcIn,
+                    ),
                   ),
                 ),
                 activeIcon: SvgPicture.asset(

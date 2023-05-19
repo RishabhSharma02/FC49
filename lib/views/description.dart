@@ -25,7 +25,7 @@ class Loading extends StatefulWidget {
 class _LoadingState extends State<Loading> {
    @override
   void initState() {
-    Timer(Duration(seconds: 7), () {Navigator.push(context, MaterialPageRoute(builder: (context)=>CalenderDesc())) ;});
+    Timer(Duration(seconds: 12), () {Navigator.push(context, MaterialPageRoute(builder: (context)=>CalenderDesc())) ;});
     super.initState();
   }
   @override
